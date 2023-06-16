@@ -32,7 +32,7 @@ def main(args=None):
                 node.get_logger().info(f'サービスの呼び出しは失敗しました．{e}')
             else:
                 node.get_logger().info( # 結果の表示
-                    f'\n リクエスト：{node.request.command} -> レスポンス：{response.answer}')
+                    f'\n リクエスト：{node.request.command} -> レスポンス： {response.answer}')
                 break
     rclpy.shutdown()    # 終了処理
     print('プログラム終了')
