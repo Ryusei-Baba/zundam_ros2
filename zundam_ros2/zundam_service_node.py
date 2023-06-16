@@ -1,6 +1,7 @@
 import rclpy    # ROS 2 Python モジュールのインポート
 from rclpy.node import Node # rclpy.node モジュールから Node クラスをインポート
-from zundam_ros2.srv import StringCommand
+from std_msgs.msg import String # std_msgs.msg モジュールから String クラスをインポート
+from zundam_ros2.srv import StringCommand # zundam_ros2.srv モジュールからカスタムメッセージ型 StringCommand をインポート
 
 class ZundamService(Node): # Zundam サービスクラス
     def __init__(self): # コンストラクタ
