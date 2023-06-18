@@ -14,7 +14,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='Ryusei Baba',
-    maintainer_email='s20c1102kg@s.chibakoudai.jp',
+    maintainer_email='babaryusei.kw@gmail.com',
     description='TODO: Package description',
     license='BSD 3-Clause',
     tests_require=['pytest'],
