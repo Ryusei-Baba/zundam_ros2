@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'zundam_node = zundam_ros2.zundam_node:main'
+            'zundam_service_node = zundam_service.zundam_service_node:main',
+            'zundam_client_node = zundam_service.zundam_client_node:main',
         ],
     },
 )
