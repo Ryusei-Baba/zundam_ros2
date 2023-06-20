@@ -1,20 +1,33 @@
+import time
 import rclpy    # ROS 2 Python モジュールのインポート
 from rclpy.node import Node # rclpy.node モジュールから Node クラスをインポート
-from std_msgs.msg import String # std_msgs.msg モジュールから String クラスをインポート
-from zundam_ros2.srv import StringCommand # zundam_ros2.srv モジュールからカスタムメッセージ型 StringCommand をインポート
+from zundam_interfaces.srv import StringCommand # zundam_interfaces.srv モジュールからカスタムメッセージ型 StringCommand をインポート
+
 
 class ZundamService(Node): # Zundam サービスクラス
     def __init__(self): # コンストラクタ
         super().__init__('zundam_service') #基底クラスコンストラクタの呼び出し
-        # サービスの生成（サービス型，サービス名，コールバック）
+        # サービスの生成（サービス型，サービス名，コールバック関数）
         self.service = self.create_service(StringCommand, 'command', self.callback)
         self.food = ['apple', 'banana', 'candy']
 
     def callback(self, request, response): # コールバック
-        time.sleep(10)
+        time.sleep(5)
         for item in self.food:
             if item in request.command:
                 response.answer = 'はい，これです．'
                 return response
         response.answer = '見つけることができませんでした．'
         return response
+    
+    
+def main():  # main関数
+    rclpy.init() # 初期化
+    node = ZundamService() # ノードの生成
+    try: # 例外処理．美しく終わるため
+        rclpy.spin(node) # ノードの処理．コールバックを繰り返し呼び出す
+    except KeyboardInterrupt:
+        print("Ctrl+C が押されました．")
+    finally:
+        rclpy.shutdown() # 終了処理
+        print('プログラム終了')
