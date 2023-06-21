@@ -6,6 +6,7 @@ ROS 2です．Topicを受け取るとずんだもんが喋ります．</br>
 
 ## install
 ```
+pip3 install playsound
 git clone
 cd ~/ws/
 rosdep install -i --from-path src -y
