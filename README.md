@@ -1,7 +1,7 @@
 # zundam_ros2
 ROS 2です．Topicを受け取るとずんだもんが喋ります．</br>
-クレジット　VOICEVOX:ずんだもん</br>
-[VOICEVOX 公式ページ](https://voicevox.hiroshiba.jp/)</br>
+クレジット　VOICEVOX:ずんだもん [VOICEVOX 公式ページ](https://voicevox.hiroshiba.jp/)</br>
+
 未完成！！
 
 ## install
