@@ -27,7 +27,7 @@ def main(args=None):
         rclpy.spin_once(node)
         if node.future.done(): # サービスの処理が終了したら
             try:
-                responce = node.future.result() # サービスの結果をレスポンスに代入
+                response = node.future.result() # サービスの結果をレスポンスに代入
             except Exception as e:
                 node.get_logger().info(f'サービスの呼び出しは失敗しました．{e}')
             else:

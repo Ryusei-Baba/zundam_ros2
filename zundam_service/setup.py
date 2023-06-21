@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'zundam_ros2'
+package_name = 'zundam_service'
 
 setup(
     name=package_name,
@@ -16,7 +16,7 @@ setup(
     maintainer='Ryusei Baba',
     maintainer_email='babaryusei.kw@gmail.com',
     description='TODO: Package description',
-    license='BSD 3-Clause',
+    license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
