@@ -2,7 +2,7 @@ import time
 import rclpy    # ROS 2 Python モジュールのインポート
 from rclpy.node import Node # rclpy.node モジュールから Node クラスをインポート
 from zundam_interfaces.srv import StringCommand # zundam_interfaces.srv モジュールからカスタムメッセージ型 StringCommand をインポート
-
+from playsound import playsound
 
 class ZundamService(Node): # Zundam サービスクラス
     def __init__(self): # コンストラクタ
@@ -18,6 +18,7 @@ class ZundamService(Node): # Zundam サービスクラス
                 response.answer = 'はい，これです．'
                 return response
         response.answer = '見つけることができませんでした．'
+        playsound("../voice/001_ずんだもん（ノーマル）_僕の名前はずんだも….wav")
         return response
     
     
