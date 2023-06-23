@@ -1,5 +1,6 @@
 import time
 import rclpy    # ROS 2 Python モジュールのインポート
+import os
 from rclpy.node import Node # rclpy.node モジュールから Node クラスをインポート
 from zundam_interfaces.srv import StringCommand # zundam_interfaces.srv モジュールからカスタムメッセージ型 StringCommand をインポート
 from playsound import playsound
@@ -12,13 +13,15 @@ class ZundamService(Node): # Zundam サービスクラス
         self.food = ['apple', 'banana', 'candy']
 
     def callback(self, request, response): # コールバック
-        time.sleep(5)
-        for item in self.food:
-            if item in request.command:
-                response.answer = 'はい，これです．'
-                return response
-        response.answer = '見つけることができませんでした．'
-        playsound("../voice/001_ずんだもん（ノーマル）_僕の名前はずんだも….wav")
+        #time.sleep(5)
+        # for item in self.food:
+        #     if item in request.command:
+        #         response.answer = 'はい，これです．'
+        #         return response
+        # response.answer = '見つけることができませんでした．'
+        #playsound(os.path.join(os.path.dirname(os.path.abspath(__file__)),'../../../zundam_ros2/zundam_service/voice/001_ずんだもん（ノーマル）_僕の名前はずんだも….wav'))
+        playsound(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../src/zundam_ros2/zundam_service/voice/001_ずんだもん（ノーマル）_僕の名前はずんだも….wav")
+)
         return response
     
     
