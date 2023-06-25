@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2023 Ryusei Baba <babaryusei.kw@gmail.com>
+# SPDX-License-Identifier: BSD 3-Clause
+
 import time
 import rclpy    # ROS 2 Python モジュールのインポート
 import os

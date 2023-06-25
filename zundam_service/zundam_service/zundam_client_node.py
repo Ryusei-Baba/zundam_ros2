@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2023 Ryusei Baba <babaryusei.kw@gmail.com>
+# SPDX-License-Identifier: BSD 3-Clause
+
 import rclpy    # ROS 2 Python モジュールのインポート
 from rclpy.node import Node # rclpy.node モジュールから Node クラスをインポート
 from zundam_interfaces.srv import StringCommand # zundam_interfaces.srv モジュールからカスタムメッセージ型 StringCommand をインポート
