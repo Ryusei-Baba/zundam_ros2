@@ -16,7 +16,7 @@ class ZundamService(Node):
         self.food = ['apple', 'banana', 'candy']
 
     def callback(self, request, response):
-        playsound(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../src/zundam_ros2/zundam_service/voice/001_ずんだもん（ノーマル）_僕の名前はずんだも….wav"))
+        playsound(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../src/zundam_ros2/zundam_service/voice/001_ずんだもん（ノーマル）_ロボットが動くのだ.wav"))
         return response
     
     
