@@ -10,6 +10,6 @@ pip3 install playsound
 git clone
 cd ~/ws/
 rosdep install -i --from-path src -y
-colcon build
+colcon build --symlink-install
 source install/setup.bash
 ```
