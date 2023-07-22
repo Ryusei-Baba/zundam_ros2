@@ -6,14 +6,16 @@ import rclpy
 import os
 from rclpy.node import Node
 from zundam_interfaces.srv import StringCommand
+from std_msgs.msg import String
+from geometry_msgs.msg import Twist
 from playsound import playsound
 
 class ZundamService(Node):
     def __init__(self):
         super().__init__('zundam_service')
         # サービスの生成（サービス型，サービス名，コールバック関数）
-        self.service = self.create_service(StringCommand, 'command', self.callback)
-        self.food = ['apple', 'banana', 'candy']
+        self.service = self.create_service(Twist, 'cmd_vel', self.callback)
+        self.vel = Twist()
 
     def callback(self, request, response):
         playsound(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../src/zundam_ros2/zundam_service/voice/001_ずんだもん（ノーマル）_ロボットが動くのだ.wav"))
