@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
             'zundam_service_node = zundam_service.zundam_service_node:main',
             'zundam_client_node = zundam_service.zundam_client_node:main',
+            'zundam_orne2_node = zundam_service.zundam_orne2_node:main',
         ],
     },
 )

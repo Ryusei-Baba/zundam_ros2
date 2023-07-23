@@ -32,6 +32,8 @@ def main(args=None):
         def loop(self):
             if self.vel.linear.x > 0.1:
                 node.send_repuest(order)
+            else:
+                order        
         rclpy.spin(node)
         if node.future.done():
             try:
